@@ -84,6 +84,30 @@ main {
     }
 }
 
+.product-add{
+    background-color: white;
+    border: 1px solid black;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    display: none;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: pink;
+
+    .form-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+}
+
 
 
 aside {

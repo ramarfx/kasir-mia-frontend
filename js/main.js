@@ -7,9 +7,9 @@ const carts = await fetchCart();
 const productContainer = document.querySelector(".products");
 if (productContainer) {
   productContainer.innerHTML = products
-  .map(
-    (product) =>
-      `
+    .map(
+      (product) =>
+        `
     <div class="card">
             <img src="${product.image}" />
 
@@ -22,8 +22,8 @@ if (productContainer) {
             </div>
     </div>
     `
-  )
-  .join("");
+    )
+    .join("");
 }
 
 //   carts
@@ -65,11 +65,47 @@ const form = document.querySelector('form')
 
 if (form) {
   document.querySelector('form').onsubmit = async (e) => {
-   e.preventDefault() 
-  
-   const payment = document.querySelector('input[type="radio"]:checked').value
-  
-   sessionStorage.setItem('payment', payment)
+    e.preventDefault()
+
+    const payment = document.querySelector('input[type="radio"]:checked').value
+
+    sessionStorage.setItem('payment', payment)
   }
-  
+
+}
+
+// add product 
+const addProduct = document.querySelector('.product-add');
+if (addProduct) {
+  const button = document.getElementById('addProduct')
+  button.onclick = () => {
+    addProduct.style.display = 'block'
+  }
+
+  const close = document.getElementById('close')
+  close.onclick = () => {
+    addProduct.style.display = 'none'
+  }
+
+  const form = document.querySelector('.product-add form')
+  form.onsubmit = async (e) => {
+    e.preventDefault()
+    console.log('udang');
+    try {
+      const formData = new FormData();
+      formData.append('name', e.target.name.value);
+      formData.append('price', e.target.price.value);
+      formData.append('image', e.target.image.files[0]);
+
+      const response = await fetch('https://kasirin.vercel.app/products', {
+        method: 'POST',
+        body: formData
+      })
+
+      
+      window.location.reload();
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
