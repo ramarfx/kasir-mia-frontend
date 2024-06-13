@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    background: rgb(255,200,205);
+background: linear-gradient(180deg, rgba(255,200,205,1) 0%, rgba(244,220,220,1) 100%);
+min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 20px;
+
+}
+/* main */
+main {
+    flex: 2;
+    padding: 20px;
+    border-right: 1px solid black;
+    min-height: 100vh;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    h1 {
+        font-weight: 900;
+        color: red;
+    }
+
+    button {
+        background-color: black;
+        color: white;
+        border-radius: 20px;
+        padding: 5px 20px;
+    }
+}
+
+.products{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 25px;
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        img{
+            width: 100%;
+        }
+
+        .description{
+            display: flex;
+            border: 1px solid black;
+            padding: 10px;
+            justify-content: space-between;
+
+            .left {
+                h5{
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                }
+            }
+
+            #buy {
+                background-color: green;
+                color: white;
+                padding: 2px 20px;
+                border: none;
+                border-radius: 20px;
+            }
+        }
+    }
+}
+
+
+
+aside {
+    flex: 1;
+    padding: 20px;
+
+    .aside-title {
+        text-align: center;
+        margin-bottom: 40px;
+
+        h1{font-size: 40px;}
+
+    }
+
+    table {
+        width: 100%;
+        padding: 15px 0;
+
+        thead{
+            font-weight: bold;
+        }
+    }
+
+    hr{margin-bottom: 40px;}
+
+    .total{
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+        .total{
+            font-size: 16px;
+            color: blue;
+        }
+    }
+
+    .payment-method{
+        margin-bottom: 40px;
+        h1{margin-bottom: 15px;}
+
+        .payment{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+
+            .method{
+                background-color: blue;
+                color: white;
+                border-radius: 15px;
+                text-align: center;
+                padding: 5px 0;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .checkout{
+        display: flex;
+        justify-content: end;
+    }
+
+    #checkout {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        font-size: 15px;
+        cursor: pointer;
+        
+    }
+}
