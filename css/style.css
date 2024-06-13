@@ -72,12 +72,13 @@ main {
                 }
             }
 
-            #buy {
+            .buy {
                 background-color: green;
                 color: white;
                 padding: 2px 20px;
                 border: none;
                 border-radius: 20px;
+                cursor: pointer;
             }
         }
     }
@@ -130,6 +131,7 @@ aside {
             grid-template-rows: repeat(2, 1fr);
             gap: 20px;
 
+            input{display: none;}
             .method{
                 background-color: blue;
                 color: white;
@@ -137,6 +139,9 @@ aside {
                 text-align: center;
                 padding: 5px 0;
                 cursor: pointer;
+                font-size: 12px;
+                width: 100%;
+                display: block;
             }
         }
     }
