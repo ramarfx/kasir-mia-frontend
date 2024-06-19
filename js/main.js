@@ -1,4 +1,4 @@
-import { addToCart, fetchCart, fetchProduct } from "./fetcher.js";
+import { STORE, addToCart, fetchCart, fetchProduct } from "./fetcher.js";
 
 const products = await fetchProduct();
 const carts = await fetchCart();
@@ -97,7 +97,7 @@ if (addProduct) {
       formData.append('price', e.target.price.value);
       formData.append('image', e.target.image.files[0]);
 
-      const response = await fetch('https://kasirin.vercel.app/products', {
+      const response = await fetch(`https://kasirin.vercel.app/products/${STORE}`, {
         method: 'POST',
         body: formData
       })

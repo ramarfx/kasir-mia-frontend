@@ -1,8 +1,9 @@
-const baseURL = "https://kasirin.vercel.app";
+export const baseURL = "https://kasirin.vercel.app";
+export const STORE = 'mia'
 
 export const fetchProduct = async () => {
   try {
-    const response = await fetch(`${baseURL}/products`);
+    const response = await fetch(`${baseURL}/products/${STORE}`);
     const result = await response.json();
 
     const products = result.data;
@@ -15,7 +16,7 @@ export const fetchProduct = async () => {
 
 export const fetchCart = async () => {
   try {
-    const response = await fetch(`${baseURL}/carts`);
+    const response = await fetch(`${baseURL}/carts/${STORE}`);
     const result = await response.json();
 
     const carts = result.data;
@@ -28,7 +29,7 @@ export const fetchCart = async () => {
 
 export const addToCart = async (id) => {
   try {
-    const response = await fetch(`${baseURL}/products/${id}/add`, {
+    const response = await fetch(`${baseURL}/products/${STORE}/${id}/add`, {
       method: "POST",
     });
     const result = await response.json();
